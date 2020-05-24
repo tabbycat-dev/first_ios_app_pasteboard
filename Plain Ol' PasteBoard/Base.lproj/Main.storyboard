@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plain_Ol__PasteBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-Cy-3wN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Hello">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="message" size="11"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClF-uT-vNw">
+                                <rect key="frame" x="0.0" y="787" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="hXS-3t-ZmR">
+                                        <connections>
+                                            <action selector="button:" destination="BYZ-38-t0r" id="n0H-4a-gc6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K7c-Cy-3wN" secondAttribute="bottom" constant="75" id="0UV-LX-zI2"/>
+                            <constraint firstItem="ClF-uT-vNw" firstAttribute="top" secondItem="K7c-Cy-3wN" secondAttribute="bottom" id="2ew-OX-o6D"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Ph-Ur-NaD"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KQ8-VO-oQl"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UWX-uT-T94"/>
+                            <constraint firstItem="ClF-uT-vNw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bx0-hv-OWA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ClF-uT-vNw" secondAttribute="bottom" constant="31" id="gBe-aw-Shs"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jJP-5L-Kgw"/>
+                            <constraint firstItem="ClF-uT-vNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l8q-X1-kmG"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oYw-jn-N0h"/>
+                            <constraint firstItem="K7c-Cy-3wN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wL4-sr-T4g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IKm-jx-GKo"/>
+                    <connections>
+                        <outlet property="textViewTop" destination="K7c-Cy-3wN" id="wi8-b1-bRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2934.375" y="115"/>
         </scene>
     </scenes>
 </document>
